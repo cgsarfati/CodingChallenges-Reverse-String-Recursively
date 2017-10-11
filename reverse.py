@@ -23,17 +23,21 @@ def rev_string(astring):
     # w/out recursion, just convert str to lst, [::-1], convert back to str
     # e.g. 'abc' --> c + 'ab' --> c + b + 'a' --> c + b + a + ''
 
-    # BASE
-        # when str empty, stop recursing
-    if len(astring) == 1:
-        return astring[0]
+    # if str not empty, continue w/ algorithm
+    if astring:
+        # BASE
+            # return remaining letter
+        if len(astring) == 1:
+            return astring[0]
 
-    # PROGRESSION
-        # get last letter
-        # call fn w/ last letter removed
+        # PROGRESSION
+            # get last letter
+            # call fn w/ last letter removed
+        letter = astring[-1]
+        return letter + rev_string(astring[:-1])
 
-    letter = astring[-1]
-    return letter + rev_string(astring[:-1])
+    # if str empty
+    return ""
 
 
 if __name__ == '__main__':

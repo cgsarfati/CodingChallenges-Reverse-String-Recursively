@@ -33,8 +33,7 @@ def rev_string(astring):
         # PROGRESSION
             # get last letter
             # call fn w/ last letter removed
-        letter = astring[-1]
-        return letter + rev_string(astring[:-1])
+        return astring[-1] + rev_string(astring[:-1])
 
     # if str empty
     return ""
